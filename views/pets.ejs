@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Pets</title>
+    <link rel="stylesheet" href="/style.css">
+	<style>
+
+	
+	body::before{
+	content:"";
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+  background-image: url("/pet.jpg.jpg");
+	background-position:center;
+	background-size:cover;
+	background-attachment: fixed;
+	filter:blur(8px);
+	z-index:-1;
+	}        
+.main {
+    margin-left: 240px;
+    padding: 20px;
+    width: 100%;
+}
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1e90ff;
+}
+.petscount {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.petcard {
+    width: 230px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #c8d6e5;
+    text-align: center;
+}
+
+.petcard img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.petcard h3 {
+    margin: 10px 0;
+    color: #1e90ff;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+
+}
+.btn {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+
+}
+.update { background: #4da3ff; }
+.details { background: #1e90ff; }
+.delete { background: #ff6b6b; } 
+
+.update:hover { background: #1e90ff; }
+.details:hover { background: #187bcd; }
+.delete:hover { background: #e84141; }
+
+.add.btn {
+    background: #4da3ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.add.btn:hover {
+    background: #1e90ff;
+}
+
+	</style>
+</head>
+
+<body>
+
+<section class="menu">
+<div class="nav">
+<div class="logotitle">
+    <span style="font-size: 30px; margin-bottom:27px;  cursor: pointer" onclick="openNav()">☰</span>
+	<h1 style=" margin-bottom:27px;">Pet Cli<b>nic</b></h1></div>
+<ul style=" margin-bottom:23px; margin-left:-15px;">
+   <li><a href="/home">Home</a></li>
+   <li><a href="/home#Aboutus">About us</a></li>
+ </ul>
+</div>
+</section>
+
+<div id="sideMenu" class="sideMenu">
+    <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">×</a>
+	<img src="/mm.jpg.png" class="logo">
+	    <a href="/home">Home</a>
+        <a href="/profile">View Profile</a>
+        <a href="/pets">View All Pet</a>
+        <a href="/appointment">Appointment</a>
+<button class="LogOut" onclick="location.href='/logout'">Log Out</button>
+
+    </div>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("sideMenu").style.width = "250px";
+    document.getElementById("contentArea").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sideMenu").style.width = "0";
+    document.getElementById("contentArea").style.marginLeft = "0";
+}
+
+function showContent(section) {
+    const contentArea = document.querySelector(".contentText");
+    contentArea.innerHTML = `<h2>${section}</h2><h3>Content for ${section}</h3>`;
+}
+</script>
+
+    <main class="main">       
+        <h1 class="title">View All Pets</h1>
+        <section class="petscount">
+            <% if (pets && pets.length > 0) { %>
+                <% pets.forEach(pet => { %>
+                    <div class="petcard">
+                        <img src="pet.jpg.jpg">
+                        <h3><%= pet.name %></h3>
+                        <div class="actions">
+                            <a href="/pets/<%= pet.id %>" class="btn details">Details</a>
+                            <a href="/pets/delete/<%= pet.id %>" class="btn delete">Delete</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+            
+
+        </section>
+
+        <button class="add btn" onclick="window.location='/addpet'">
+                
+            Add New Pet
+        </button>
+
+    </main>
+
+</body>
+</html>

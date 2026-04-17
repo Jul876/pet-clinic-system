@@ -1,0 +1,129 @@
+
+*,::after,::before{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	
+}
+
+body{
+	margin:0 50px;
+	background-color:#cdeaff;
+}
+
+
+.nav{
+	width:100%;
+	display:flex;
+	align-items:center;
+	padding:30px 0;
+	position:relative;
+	
+}
+
+.nav .logotitle {
+	display:flex;
+	align-items:center;
+	gap:20px;
+}
+
+.nav .logotitle b{
+	color:#1a3987;
+}
+
+.nav ul{
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+	display:flex;
+	list-style:none;
+	list-style:none;
+	z-index:2;
+	
+}
+
+.nav ul li{
+	margin-left:20px;
+	z-index:2;
+
+}
+.nav ul li a{
+	text-decoration:none;
+	color:#000000;
+	font-weight:blod;
+	font-family: sans-serif;
+	font-size:20px;
+	z-index:2;
+}
+ .nav ul li  a:hover{
+	 color:#1a3987;
+ }
+ 
+.sideMenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #7abbe8;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+	
+}
+
+
+.sideMenu a {
+    padding: 8px 8px 8px 50px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    font-size: 18px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.sideMenu a:hover {
+    background: #1a3987;
+    color: #fff;
+}
+
+
+.sideMenu .closeBtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+.logotitle{
+    display:flex;
+    align-items:center;
+    gap:20px;
+	
+}
+
+.logo{
+	width:120px;
+	height:auto;
+	display:block;
+	margin:0 auto 20px auto;
+}
+.LogOut{
+	width: 48%;
+	margin-top: 20px;
+	padding:10px 20px;
+		cursor:pointer;
+	background-color: #74a4d8; 
+	color:white; 
+	border:none;
+	border-radius:6px;
+    margin:68px;
+}
+
+.LogOut:hover {
+   background-color: #1a3987;
+}
