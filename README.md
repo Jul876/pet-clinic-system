@@ -13,4 +13,5 @@
 
 
 
-A simple Pet Clinic System website developed as a group project using HTML, CSS, and JavaScript. It provides a clean and user-friendly interface for managing pets, viewing information, and interacting with basic clinic features.
+A simple Pet Clinic System website developed as a group project using HTML, CSS, and JavaScript. The team worked together on the front-end development and also collaborated on the back-end development. My contribution included the home page, sign-in page, login page, and pet details page.
+
